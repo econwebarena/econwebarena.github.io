@@ -1,2 +1,3 @@
-# econwebarena.github.io
-Main website for the EconWebArena project
+# EconWebArena
+
+Main website for the EconWebArena project.
