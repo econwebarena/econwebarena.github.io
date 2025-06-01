@@ -9,7 +9,7 @@
 
     <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
           rel="stylesheet">
-    <link href="./static/images/econwebarena_logo.png" rel="icon" type="image/png">
+    <link href="./static/images/logo.png" rel="icon" type="image/png">
 
     <link href="./static/css/bulma.min.css" rel="stylesheet">
     <link href="./static/css/bulma-carousel.min.css" rel="stylesheet">
@@ -61,7 +61,8 @@
                         <div class="publication-links">
                             <!-- Paper Link. -->
                             <span class="link-block">
-                                <a class="external-link button is-normal is-rounded is-dark" href=#>
+                                <a class="external-link button is-normal is-rounded is-dark"
+                                   href="https://drive.google.com/file/d/1Q0dKx60HOgBNN6-ZW7ajS8L0gb_q-iF2/view?usp=sharing">
                                     <span class="icon"><i class="fas fa-file-pdf"></i></span>
                                     <span>Paper</span>
                                 </a>
@@ -79,7 +80,8 @@
 
                             <!-- Code Link. -->
                             <span class="link-block">
-                                <a class="external-link button is-normal is-rounded is-dark" href=#>
+                                <a class="external-link button is-normal is-rounded is-dark"
+                                   href="https://github.com/econwebarena/BrowserGym">
                                     <span class="icon"><i class="fab fa-github"></i></span>
                                     <span>Code</span>
                                 </a>
@@ -110,11 +112,209 @@
             <div class="column is-four-fifths">
                 <h2 class="title is-3">Abstract</h2>
                 <div class="content has-text-justified">
-                    <p>Coming soon.</p>
+                    <p>
+                        We introduce EconWebArena, a benchmark for evaluating autonomous agents on complex, multimodal
+                        economic tasks within realistic web environments. It comprises 360 carefully constructed tasks
+                        sourced from over 80 authoritative websites spanning domains such as macroeconomics, financial
+                        markets, labor, trade, and public policy. Each task requires agents to navigate real-world
+                        websites, interpret structured and visual content, interact with economic databases, and extract
+                        precise information through multi-step workflows. After generating initial task candidates using
+                        state-of-the-art language models, we manually review and curate each task to ensure clarity,
+                        feasibility, and grounding in reliable sources. Unlike prior benchmarks, EconWebArena emphasizes
+                        accuracy, source reliability, and temporal specificity in web-based economic analysis. We
+                        evaluate state-of-the-art language models acting as web agents and identify key challenges in
+                        data grounding, visual reasoning, and navigation. Our findings reveal a substantial performance
+                        gap between current web agents and the demands of real-world economic tasks, highlighting the
+                        need for further advances in domain-aware web intelligence.
+                    </p>
                 </div>
             </div>
         </div>
         <!--/ Abstract. -->
+
+        <!-- Figures Section -->
+        <div class="columns is-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3 has-text-centered">Task Categories</h2>
+                <figure class="image">
+                    <img alt="Task categories in EconWebArena" src="./static/images/categories.png">
+                </figure>
+            </div>
+        </div>
+
+        <div class="columns is-centered">
+            <div class="column is-four-fifths">
+                <h2 class="title is-3 has-text-centered">Website Examples</h2>
+                <figure class="image">
+                    <img alt="Examples of websites used in EconWebArena tasks" src="./static/images/examples.png">
+                </figure>
+            </div>
+        </div>
+        <!--/ Figures Section -->
+
+        <!-- Examples Table -->
+        <div class="columns is-centered">
+            <div class="column is-full">
+                <h2 class="title is-3 has-text-centered">Task Examples</h2>
+                <div class="table-container">
+                    <table class="table is-bordered is-striped is-hoverable is-fullwidth is-size-6">
+                        <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Task Description</th>
+                            <th>Start URL</th>
+                            <th>Answer</th>
+                            <th>Domain</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Government</td>
+                            <td>
+                                As published by the Office for National Statistics, what was the CPIH annual inflation
+                                rate for all items (2015=100) in the United Kingdom in March 2025? Provide only the
+                                number as a decimal with one digit after the decimal point, without percent symbols or
+                                other units.
+                            </td>
+                            <td><a href="https://www.ons.gov.uk/" rel="noopener noreferrer"
+                                   target="_blank">ons.gov.uk</a></td>
+                            <td>3.4</td>
+                            <td>ons.gov.uk</td>
+                        </tr>
+                        <tr>
+                            <td>Energy</td>
+                            <td>
+                                As reported by the U.S. Energy Information Administration, what was the average retail
+                                price of regular gasoline in California during the week of March 24, 2025, in dollars
+                                per gallon? Provide only the number as a decimal with three digits after the decimal
+                                point, without currency symbols, commas, or other units.
+                            </td>
+                            <td><a href="https://www.eia.gov/" rel="noopener noreferrer" target="_blank">eia.gov</a>
+                            </td>
+                            <td>4.418</td>
+                            <td>eia.gov</td>
+                        </tr>
+                        <tr>
+                            <td>Markets</td>
+                            <td>
+                                As reported by Cox Automotive, what was the total number of unsold used vehicles in the
+                                United States as of March 31, 2025? Provide only the number as a decimal with two
+                                digits, in millions, without commas or other units.
+                            </td>
+                            <td><a href="https://www.coxautoinc.com/" rel="noopener noreferrer" target="_blank">coxautoinc.com</a>
+                            </td>
+                            <td>2.14</td>
+                            <td>coxautoinc.com</td>
+                        </tr>
+                        <tr>
+                            <td>Banking</td>
+                            <td>
+                                As reported by the Federal Reserve Bank of New York, what was the effective federal
+                                funds rate on January 10, 2025? Provide only the number as a decimal with two digits,
+                                without percent symbols or other units.
+                            </td>
+                            <td><a href="https://www.newyorkfed.org/" rel="noopener noreferrer" target="_blank">newyorkfed.org</a>
+                            </td>
+                            <td>4.33</td>
+                            <td>newyorkfed.org</td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <!--/ Examples Table -->
+
+        <!-- Results Table -->
+        <div class="columns is-centered">
+            <div class="column is-full">
+                <h2 class="title is-3 has-text-centered">Model Performance</h2>
+                <div class="table-container">
+                    <table class="table is-bordered is-striped is-hoverable is-fullwidth is-size-6">
+                        <thead>
+                        <tr>
+                            <th>Category</th>
+                            <th>Tasks</th>
+                            <th>o4-mini</th>
+                            <th>GPT-4.1</th>
+                            <th>GPT-4o</th>
+                            <th>Claude-Sonnet-4</th>
+                            <th>Llama-4-Maverick</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>Banking</td>
+                            <td>60</td>
+                            <td>38.3%</td>
+                            <td>23.3%</td>
+                            <td>18.3%</td>
+                            <td>38.3%</td>
+                            <td>20.0%</td>
+                        </tr>
+                        <tr>
+                            <td>Finance</td>
+                            <td>21</td>
+                            <td>33.3%</td>
+                            <td>14.3%</td>
+                            <td>14.3%</td>
+                            <td>23.8%</td>
+                            <td>9.5%</td>
+                        </tr>
+                        <tr>
+                            <td>Government</td>
+                            <td>138</td>
+                            <td>56.5%</td>
+                            <td>44.9%</td>
+                            <td>36.2%</td>
+                            <td>47.1%</td>
+                            <td>25.4%</td>
+                        </tr>
+                        <tr>
+                            <td>Labor</td>
+                            <td>24</td>
+                            <td>25.0%</td>
+                            <td>0.0%</td>
+                            <td>8.3%</td>
+                            <td>12.5%</td>
+                            <td>4.2%</td>
+                        </tr>
+                        <tr>
+                            <td>Markets</td>
+                            <td>60</td>
+                            <td>48.3%</td>
+                            <td>35.0%</td>
+                            <td>33.3%</td>
+                            <td>41.7%</td>
+                            <td>10.0%</td>
+                        </tr>
+                        <tr>
+                            <td>Other<sup>*</sup></td>
+                            <td>57</td>
+                            <td>38.6%</td>
+                            <td>22.8%</td>
+                            <td>21.1%</td>
+                            <td>29.8%</td>
+                            <td>12.3%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>All</strong></td>
+                            <td><strong>360</strong></td>
+                            <td><strong>45.8%</strong></td>
+                            <td><strong>31.4%</strong></td>
+                            <td><strong>27.2%</strong></td>
+                            <td><strong>38.3%</strong></td>
+                            <td><strong>17.5%</strong></td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <p class="is-size-7 has-text-grey">
+                        <sup>*</sup>Other categories: Energy, RealEstate, Trade, Education, and Health.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!--/ Results Table -->
 
         <!-- Paper Video. -->
         <div class="columns is-centered has-text-centered">
