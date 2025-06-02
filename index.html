@@ -121,7 +121,7 @@
     <div class="container is-max-desktop">
         <div class="hero-body">
             <h2 class="subtitle">
-                EconWebArena is a benchmark for evaluating AI agents on realistic economic tasks that require web
+                EconWebArena is a benchmark for evaluating LLM agents on realistic economic tasks that require web
                 navigation, data extraction, and reasoning. It includes 360 curated tasks from 82 real-world websites.
                 Current models struggle with accuracy, grounding, and complex web interactions, revealing the need for
                 more capable, domain-aware agents.
@@ -144,18 +144,46 @@
             </p>
         </div>
 
-        <div class="columns">
-            <div class="column">
-                <video autoplay controls id="demo-video-1" loop muted playsinline
-                       style="width: 100%; max-width: 100%; height: auto;">
-                    <source src="./static/videos/demo.mov" type="video/mp4"/>
-                </video>
+        <div class="carousel results-carousel" id="demo-carousel">
+            <div class="item">
+                <figure>
+                    <video autoplay controls loop muted playsinline style="width: 100%; height: auto;">
+                        <source src="./static/videos/demo.mov" type="video/mp4"/>
+                    </video>
+                    <figcaption class="has-text-centered is-size-6 mt-2">
+                        Task 322 (Argentina 2022 tariff rate) + GPT-4.1
+                    </figcaption>
+                </figure>
             </div>
-            <div class="column">
-                <video autoplay controls id="demo-video-2" loop muted playsinline
-                       style="width: 100%; max-width: 100%; height: auto;">
-                    <source src="./static/videos/demo.mov" type="video/mp4"/>
-                </video>
+            <div class="item">
+                <figure>
+                    <video autoplay controls loop muted playsinline style="width: 100%; height: auto;">
+                        <source src="./static/videos/demo.mov" type="video/mp4"/>
+                    </video>
+                    <figcaption class="has-text-centered is-size-6 mt-2">
+                        Task 322 (Argentina 2022 tariff rate) + GPT-4.1
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="item">
+                <figure>
+                    <video autoplay controls loop muted playsinline style="width: 100%; height: auto;">
+                        <source src="./static/videos/demo.mov" type="video/mp4"/>
+                    </video>
+                    <figcaption class="has-text-centered is-size-6 mt-2">
+                        Task 322 (Argentina 2022 tariff rate) + GPT-4.1
+                    </figcaption>
+                </figure>
+            </div>
+            <div class="item">
+                <figure>
+                    <video autoplay controls loop muted playsinline style="width: 100%; height: auto;">
+                        <source src="./static/videos/demo.mov" type="video/mp4"/>
+                    </video>
+                    <figcaption class="has-text-centered is-size-6 mt-2">
+                        Task 322 (Argentina 2022 tariff rate) + GPT-4.1
+                    </figcaption>
+                </figure>
             </div>
         </div>
     </div>
@@ -394,11 +422,9 @@
 
 <script>
     window.addEventListener("DOMContentLoaded", () => {
-        const demo1 = document.getElementById("demo-video-1");
-        const demo2 = document.getElementById("demo-video-2");
-
-        if (demo1) demo1.playbackRate = 5.0;
-        if (demo2) demo2.playbackRate = 5.0;
+        document.querySelectorAll('#demo-carousel video').forEach(video => {
+            video.playbackRate = 5.0;
+        });
     });
 </script>
 </body>
