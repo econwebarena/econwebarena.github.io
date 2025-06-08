@@ -121,10 +121,11 @@
     <div class="container is-max-desktop">
         <div class="hero-body">
             <h2 class="subtitle">
-                EconWebArena is a benchmark for evaluating LLM agents on realistic economic tasks that require web
-                navigation, data extraction, and reasoning. It includes 360 curated tasks from 82 real-world websites.
-                Current models struggle with accuracy, grounding, and complex web interactions, revealing the need for
-                more capable, domain-aware agents.
+                EconWebArena is a benchmark for evaluating agents on realistic economic tasks grounded in live
+                websites. It includes 360 curated tasks from 82 authoritative sources across ten domains such as
+                finance, labor, and trade. Tasks require agents to navigate webpages, interpret visual and structured
+                data, and extract accurate, time-sensitive answers. Our analysis highlights persistent challenges in
+                grounding, reasoning, and interaction for current models.
             </h2>
         </div>
     </div>
@@ -140,7 +141,7 @@
         </div>
         <div class="content has-text-centered">
             <p>
-                The following videos demonstrate agent behavior on economic data tasks. Playback is shown at 5× speed.
+                These videos show agents tackling real-world economic tasks on the web. Playback is 5× speed.
             </p>
         </div>
 
@@ -215,9 +216,14 @@
         <!-- Figures Section -->
         <div class="columns is-centered">
             <div class="column is-four-fifths">
-                <h2 class="title is-3 has-text-centered">Task Categories</h2>
+                <h2 class="title is-3 has-text-centered">EconWebArena</h2>
+                <p class="has-text-justified mb-4">
+                    The EconWebArena benchmark covers a wide range of economic domains and task types. Each task is
+                    grounded in a real website and designed to test agents' abilities in navigation, retrieval, and
+                    reasoning.
+                </p>
                 <figure class="image">
-                    <img alt="Task categories in EconWebArena" src="./static/images/categories.png">
+                    <img alt="EconWebArena overview" src="./static/images/benchmark.png">
                 </figure>
             </div>
         </div>
@@ -225,6 +231,11 @@
         <div class="columns is-centered">
             <div class="column is-four-fifths">
                 <h2 class="title is-3 has-text-centered">Website Examples</h2>
+                <p class="has-text-justified mb-4">
+                    The benchmark draws from 82 authoritative websites, including government portals, financial
+                    databases, and statistical agencies. Below are representative examples of the diverse web interfaces
+                    agents interact with.
+                </p>
                 <figure class="image">
                     <img alt="Examples of websites used in EconWebArena tasks" src="./static/images/examples.png">
                 </figure>
@@ -236,6 +247,11 @@
         <div class="columns is-centered">
             <div class="column is-full">
                 <h2 class="title is-3 has-text-centered">Task Examples</h2>
+                <p class="has-text-justified mb-4">
+                    Each EconWebArena task is grounded in a real website and framed as a precise, answerable question.
+                    The examples below illustrate the diversity of domains and data formats, from inflation statistics
+                    to market prices and interest rates.
+                </p>
                 <div class="table-container">
                     <table class="table is-bordered is-striped is-hoverable is-fullwidth is-size-6">
                         <thead>
@@ -309,6 +325,11 @@
         <div class="columns is-centered">
             <div class="column is-full">
                 <h2 class="title is-3 has-text-centered">Model Performance</h2>
+                <p class="has-text-justified mb-4">
+                    We evaluate several state-of-the-art multimodal large language model (MLLM) agents on EconWebArena
+                    across major economic domains. The table below reports task success rates (SR) and average number of
+                    steps on successful tasks. Human performance is shown for comparison.
+                </p>
                 <div class="table-container">
                     <table class="table is-bordered is-striped is-hoverable is-fullwidth is-size-6">
                         <thead>
@@ -318,8 +339,10 @@
                             <th>o4-mini</th>
                             <th>GPT-4.1</th>
                             <th>GPT-4o</th>
-                            <th>Claude-Sonnet-4</th>
-                            <th>Llama-4-Maverick</th>
+                            <th>Claude-4<sup>†</sup></th>
+                            <th>Gemini-2.5<sup>‡</sup></th>
+                            <th>Llama-4<sup>§</sup></th>
+                            <th>Human</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -330,7 +353,9 @@
                             <td>23.3%</td>
                             <td>18.3%</td>
                             <td>38.3%</td>
+                            <td>28.3%</td>
                             <td>21.7%</td>
+                            <td>95.0%</td>
                         </tr>
                         <tr>
                             <td>Finance</td>
@@ -339,25 +364,31 @@
                             <td>14.3%</td>
                             <td>14.3%</td>
                             <td>23.8%</td>
+                            <td>33.3%</td>
                             <td>9.5%</td>
+                            <td>95.2%</td>
                         </tr>
                         <tr>
                             <td>Government</td>
                             <td>138</td>
-                            <td>56.5%</td>
-                            <td>44.9%</td>
-                            <td>36.2%</td>
+                            <td>57.2%</td>
+                            <td>45.7%</td>
+                            <td>35.5%</td>
                             <td>47.1%</td>
+                            <td>39.1%</td>
                             <td>26.1%</td>
+                            <td>91.3%</td>
                         </tr>
                         <tr>
                             <td>Labor</td>
                             <td>24</td>
-                            <td>25.0%</td>
+                            <td>20.8%</td>
                             <td>0.0%</td>
                             <td>8.3%</td>
                             <td>12.5%</td>
                             <td>4.2%</td>
+                            <td>4.2%</td>
+                            <td>91.7%</td>
                         </tr>
                         <tr>
                             <td>Markets</td>
@@ -366,30 +397,50 @@
                             <td>35.0%</td>
                             <td>33.3%</td>
                             <td>41.7%</td>
+                            <td>33.3%</td>
                             <td>15.0%</td>
+                            <td>96.7%</td>
                         </tr>
                         <tr>
                             <td>Other<sup>*</sup></td>
                             <td>57</td>
-                            <td>38.6%</td>
-                            <td>22.8%</td>
+                            <td>42.1%</td>
+                            <td>24.6%</td>
                             <td>21.1%</td>
-                            <td>29.8%</td>
+                            <td>31.6%</td>
+                            <td>22.8%</td>
                             <td>12.3%</td>
+                            <td>93.0%</td>
                         </tr>
                         <tr>
-                            <td><strong>All</strong></td>
+                            <td><strong>All SR</strong></td>
                             <td><strong>360</strong></td>
-                            <td><strong>46.4%</strong></td>
-                            <td><strong>31.4%</strong></td>
-                            <td><strong>27.2%</strong></td>
-                            <td><strong>38.3%</strong></td>
+                            <td><strong>46.9%</strong></td>
+                            <td><strong>31.9%</strong></td>
+                            <td><strong>26.9%</strong></td>
+                            <td><strong>38.6%</strong></td>
+                            <td><strong>31.1%</strong></td>
                             <td><strong>18.9%</strong></td>
+                            <td><strong>93.3%</strong></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Steps</strong></td>
+                            <td>–</td>
+                            <td><strong>8.99</strong></td>
+                            <td><strong>7.23</strong></td>
+                            <td><strong>7.77</strong></td>
+                            <td><strong>11.77</strong></td>
+                            <td><strong>9.29</strong></td>
+                            <td><strong>9.54</strong></td>
+                            <td>–</td>
                         </tr>
                         </tbody>
                     </table>
                     <p class="is-size-7 has-text-grey">
-                        <sup>*</sup>Other categories: Energy, RealEstate, Trade, Education, and Health.
+                        <sup>†</sup>Claude Sonnet 4.
+                        <sup>‡</sup>Gemini 2.5 Flash.
+                        <sup>§</sup>Llama 4 Maverick.
+                        <sup>*</sup>Other: Energy, RealEstate, Trade, Education, and Health.
                     </p>
                 </div>
             </div>
@@ -400,6 +451,9 @@
         <div class="columns is-centered has-text-centered">
             <div class="column is-four-fifths">
                 <h2 class="title is-3">Video</h2>
+                <p class="has-text-centered mb-4">
+                    A short video summary of EconWebArena, its task design, and evaluation results.
+                </p>
                 <div class="publication-video">
                     <iframe allow="autoplay; encrypted-media" allowfullscreen frameborder="0"
                             src="https://www.youtube.com/embed/TwP3m2yWb7A"></iframe>
